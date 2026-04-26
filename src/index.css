@@ -8,35 +8,62 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* GUAYO luxury palette */
+    --background: 40 33% 97%;        /* off-white cream */
+    --foreground: 30 15% 15%;        /* deep warm charcoal */
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 40 40% 99%;
+    --card-foreground: 30 15% 15%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 40 40% 99%;
+    --popover-foreground: 30 15% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary = deep oxblood red (from logo) */
+    --primary: 358 65% 32%;
+    --primary-foreground: 40 33% 97%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary = warm taupe / olive (from flyer footer band) */
+    --secondary: 42 14% 56%;
+    --secondary-foreground: 40 40% 99%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 40 20% 92%;
+    --muted-foreground: 30 10% 40%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent = mustard / antique gold */
+    --accent: 41 65% 48%;
+    --accent-foreground: 30 25% 12%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 70% 40%;
+    --destructive-foreground: 40 33% 97%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 40 18% 86%;
+    --input: 40 18% 86%;
+    --ring: 358 65% 32%;
 
-    --radius: 0.5rem;
+    --radius: 0.25rem;
+
+    /* Brand specific */
+    --brand-cream: 40 33% 97%;
+    --brand-bone: 38 28% 92%;
+    --brand-taupe: 42 14% 56%;
+    --brand-olive: 60 12% 38%;
+    --brand-oxblood: 358 65% 32%;
+    --brand-rust: 18 78% 48%;
+    --brand-gold: 41 65% 48%;
+    --brand-ink: 30 18% 12%;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(180deg, hsl(30 25% 8% / 0.15) 0%, hsl(30 25% 8% / 0.45) 55%, hsl(30 25% 8% / 0.85) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(41 65% 48%), hsl(35 70% 55%));
+    --gradient-brand: linear-gradient(135deg, hsl(358 65% 32%), hsl(18 78% 48%));
+
+    /* Shadows */
+    --shadow-luxe: 0 30px 60px -25px hsl(30 25% 8% / 0.35), 0 12px 24px -12px hsl(30 25% 8% / 0.18);
+    --shadow-card: 0 8px 30px -12px hsl(30 25% 8% / 0.18);
+    --shadow-gold: 0 18px 40px -18px hsl(41 65% 48% / 0.55);
+
+    /* Easing */
+    --ease-luxe: cubic-bezier(0.22, 1, 0.36, 1);
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,6 +127,52 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-feature-settings: 'ss01', 'cv11';
   }
+
+  h1, h2, h3, .font-serif {
+    font-family: 'Cormorant Garamond', 'Times New Roman', serif;
+    letter-spacing: -0.01em;
+  }
+}
+
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+  .bg-gradient-hero { background: var(--gradient-hero); }
+  .bg-gradient-gold { background: var(--gradient-gold); }
+  .bg-gradient-brand { background: var(--gradient-brand); }
+  .shadow-luxe { box-shadow: var(--shadow-luxe); }
+  .shadow-card-luxe { box-shadow: var(--shadow-card); }
+  .shadow-gold { box-shadow: var(--shadow-gold); }
+
+  .gold-rule {
+    height: 2px;
+    width: 56px;
+    background: var(--gradient-gold);
+    border-radius: 2px;
+  }
+
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes ken-burns {
+    0% { transform: scale(1.05); }
+    100% { transform: scale(1.18); }
+  }
+  @keyframes pulse-ring {
+    0% { box-shadow: 0 0 0 0 hsl(142 70% 45% / 0.55); }
+    70% { box-shadow: 0 0 0 18px hsl(142 70% 45% / 0); }
+    100% { box-shadow: 0 0 0 0 hsl(142 70% 45% / 0); }
+  }
+  .animate-fade-up { animation: fade-up 0.9s var(--ease-luxe) both; }
+  .animate-fade-in { animation: fade-in 1.2s var(--ease-luxe) both; }
+  .animate-ken-burns { animation: ken-burns 18s ease-out both; }
+  .animate-pulse-ring { animation: pulse-ring 2s infinite; }
 }
