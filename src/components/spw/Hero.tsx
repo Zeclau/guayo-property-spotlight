@@ -1,4 +1,4 @@
-RentaheroImg from "@/assets/hero-mansion.jpg";
+import heroImg from "@/assets/hero-mansion.jpg";
 
 const Hero = () => {
   return (
@@ -17,7 +17,8 @@ const Hero = () => {
           <div className="max-w-3xl animate-fade-up">
             <span className="inline-flex items-center gap-2 rounded-full bg-brand-cream/10 px-4 py-1.5 text-[10px] font-medium uppercase tracking-[0.3em] text-brand-cream backdrop-blur-md ring-1 ring-brand-cream/30">
               <span className="h-1.5 w-1.5 rounded-full bg-brand-gold animate-pulse" />
-              Propiedad Disponible para Renta Sacuanjoche Demo          </span>
+              Propiedad Disponible para Renta
+            </span>
 
             <h1 className="mt-6 font-serif text-4xl leading-[1.05] text-brand-cream text-balance sm:text-5xl md:text-6xl lg:text-7xl">
               Lujosa Residencia en <span className="italic text-brand-gold">La Estancia</span> de Santo Domingo
