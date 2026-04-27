@@ -44,10 +44,6 @@ const LocationMap = () => {
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             />
-            <div className="pointer-events-none absolute left-4 top-4 inline-flex items-center gap-2 rounded-full bg-brand-ink/85 px-3 py-1.5 text-[10px] uppercase tracking-[0.25em] text-brand-cream backdrop-blur">
-              <span className="h-1.5 w-1.5 rounded-full bg-brand-gold" />
-              Radio de 1 km · Vista aproximada
-            </div>
           </div>
 
           <div className="grid gap-px bg-border sm:grid-cols-3">
