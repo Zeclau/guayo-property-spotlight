@@ -36,7 +36,7 @@ const LocationMap = () => {
         </div>
 
         <div className="overflow-hidden rounded-sm shadow-luxe ring-1 ring-border">
-          <div className="relative aspect-[16/9] w-full bg-muted">
+          <div className="relative aspect-[4/3] w-full bg-muted md:aspect-[16/9] md:h-[70vh] md:min-h-[600px]">
             <iframe
               title="Mapa — La Estancia de Santo Domingo, Managua"
               src={mapSrc}
