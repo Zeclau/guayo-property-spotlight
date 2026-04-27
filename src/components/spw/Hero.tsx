@@ -15,7 +15,7 @@ const Hero = () => {
       <div className="relative z-10 flex min-h-[100svh] flex-col justify-end px-6 pb-20 pt-32 md:pb-28">
         <div className="container mx-auto">
           <div className="max-w-3xl animate-fade-up">
-            <div className="mb-4 font-serif text-xs italic tracking-[0.3em] text-brand-gold sm:text-sm">
+            <div className="mb-6 font-serif text-4xl italic tracking-wide text-[hsl(120,40%,15%)] drop-shadow-[0_2px_8px_rgba(255,255,255,0.4)] sm:text-5xl md:text-6xl">
               Sacuanjoche Demo
             </div>
             <span className="inline-flex items-center gap-2 rounded-full bg-brand-cream/10 px-4 py-1.5 text-[10px] font-medium uppercase tracking-[0.3em] text-brand-cream backdrop-blur-md ring-1 ring-brand-cream/30">
